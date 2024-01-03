@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import ReactModal from "react-modal";
-import { VotingContract } from "../utils";
+import { VotingContract } from "../utils/index";
 
 const AddVote = ({ isOpen, setIsOpen, account, getAllVotes }) => {
   const votingName = useRef();

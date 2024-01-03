@@ -1,5 +1,5 @@
 import ReactModal from "react-modal";
-import { AdoptionContract, VotingContract } from "../utils";
+import { AdoptionContract, VotingContract } from "../utils/index";
 import Voting from "./Vote";
 
 const ListVote = ({

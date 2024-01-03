@@ -3,37 +3,35 @@ pragma solidity >=0.4.22 <0.9.0;
 pragma experimental ABIEncoderV2;
 
 contract Voting {
-  struct VotingData {
-    string candidate;
-    uint votes;
+  struct votingData{
+    uint id;
+    string name;
+    string picture;
   }
 
-  mapping(uint => VotingData) public votes;
-  uint public totalVotes;
+  votingData[] public voting;
+  uint counter_id = 0;
 
-  function addVotes(string memory _candidate) public returns (string memory) {
-    VotingData memory newVote;
-    newVote.candidate = _candidate;
-    newVote.votes = 0;
+  function addVoting(string memory _name, string memory _picture) public returns (string memory) {
+    votingData memory inData;
 
-    votes[totalVotes] = newVote;
-    totalVotes++;
+    inData.id = counter_id;
+    inData.name = _name;
+    inData.picture = _picture;
 
-    return _candidate;
+    voting.push(inData);
+
+    counter_id++;
+
+    return _name;
   }
 
-  function getVotes() public view returns (VotingData[] memory) {
-    VotingData[] memory result = new VotingData[](totalVotes);
-    for (uint i = 0; i < totalVotes; i++) {
-      result[i] = votes[i];
-    }
-    return result;
+  function getVoting() public view returns (votingData[] memory) {
+    return voting;
   }
 
-  function Votes(uint _id) public returns (uint) {
-    require(_id < totalVotes, "Invalid candidate ID");
-
-    votes[_id].votes++;
+  function deleteVotingById(uint _id) public returns (uint){
+    delete voting[_id];
 
     return _id;
   }

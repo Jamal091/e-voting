@@ -1,8 +1,8 @@
 import React from "react";
-import { VotingContract } from "../utils"; // Ganti AdoptionContract dengan VotingContract
+import { AdaptionContract } from "../utils"; // Ganti AdoptionContract dengan VotingContract
 
 const Voting = ({ account, balance, Votes, owner, getAllOwnerVotes }) => {
-  const contract = VotingContract(); // Ganti AdoptionContract dengan VotingContract
+  const contract = AdaptionContract();
   const nullVal = "0x0000000000000000000000000000000000000000";
 
   const handleVote = async (e) => {

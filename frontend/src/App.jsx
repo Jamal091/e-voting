@@ -4,7 +4,7 @@ import AddVote from "./componen/AddVote";
 import ListVote from "./componen/ListVote";
 import Web3 from "web3";
 import { AdoptionContract, VotingContract } from "./utils";
-// import './App.css'
+//import "./App.css";
 
 function App() {
   const [votes, setVotes] = useState([]);
@@ -78,7 +78,7 @@ function App() {
   return (
     <div className="container">
       <div className="row justify-content-center mt-4">
-        <h1 className="text-center mb-4">Animal Adoption</h1>
+        <h1 className="text-center mb-4">Votes Adoption</h1>
         <AddVote
           isOpen={addVotingIsOpen}
           setIsOpen={setAddVotingIsOpen}
@@ -113,7 +113,7 @@ function App() {
                         setAddVotingIsOpen(true);
                       }}
                     >
-                      Add Animals
+                      Add Votes
                     </button>
                   </li>
                   <li>
