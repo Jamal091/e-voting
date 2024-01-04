@@ -48,7 +48,7 @@ function App() {
       // console.log(res);
       setVotes(res);
     } catch (error) {
-      console.error(error);
+    console.error('Error in getAllVotes:', error);
     }
   };
 
