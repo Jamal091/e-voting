@@ -1,5 +1,5 @@
 import React from "react";
-import { AdaptionContract } from "../utils"; // Ganti AdoptionContract dengan VotingContract
+import { AdoptionContract } from "../utils/index"; // Ganti AdoptionContract dengan VotingContract
 
 const Voting = ({ account, balance, Votes, owner, getAllOwnerVotes }) => {
   const contract = AdaptionContract();

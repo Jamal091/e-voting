@@ -10,8 +10,8 @@ const ListVote = ({
   getAllOwnerVotes,
   getAllVotes,
 }) => {
-  const contractAdoption = AdoptionContract();
-  const contractVoting = VotingContract();
+  const Adoptioncontract = AdoptionContract();
+  const Votingcontract = VotingContract();
 
   const handleClose = () => {
     setIsOpen(false);
@@ -19,7 +19,7 @@ const ListVote = ({
 
   const handleResetOwner = async (e) => {
     try {
-      const res = await contractAdoption.methods
+      const res = await Adoptioncontract.methods
         .revertOwnership(Number(e.target.value))
         .send({ from: String(account[0]) });
 
@@ -31,7 +31,7 @@ const ListVote = ({
 
   const handleDeleteVotes = async (e) => {
     try {
-      const res = await contractVoting.methods
+      const res = await Votingcontract.methods
         .deleteAnimalById(Number(e.target.value))
         .send({ from: String(account[0]) });
 

@@ -6,17 +6,13 @@ contract Adoption {
 
   function setAdopters(uint _id) public returns (uint) {
     assert(_id >= 0);
-
     adopters[_id] = msg.sender;
-
     return _id;
   }
 
   function revertOwnership(uint _id) public returns (uint) {
     assert(_id >= 0);
-
     adopters[_id] = address(0x0000000000000000000000000000000000000000);
-
     return _id;
   }
 
