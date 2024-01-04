@@ -54,7 +54,7 @@ const AddVote = ({ isOpen, setIsOpen, account = null, getAllVotes = () => [] }) 
             ref={votingType}
             aria-label="Default select example"
           >
-            <option selected>Silahkan Pilih</option>
+            <option value="Silahkan Pilih" disabled>Silahkan Pilih</option>
             <option value="pdi.png">PDI</option>
             <option value="psi.png">PSI</option>
           </select>
