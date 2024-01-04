@@ -2,10 +2,10 @@ import { useRef } from "react";
 import ReactModal from "react-modal";
 import { VotingContract } from "../utils/index";
 
-const AddVote = ({ isOpen, setIsOpen, account, getAllVotes }) => {
+const AddVote = ({ isOpen, setIsOpen, account = null, getAllVotes = () => [] }) => {
   const votingName = useRef();
   const votingType = useRef();
-  const contract = VotingContract();
+  const contract = new VotingContract();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
