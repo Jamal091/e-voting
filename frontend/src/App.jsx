@@ -42,8 +42,8 @@ function App() {
 
   const getAllVotes = async () => {
     try {
-      const gas = await votingContract.methods.Voting().estimateGas();
-      const res = await votingContract.methods.Voting().call();
+      const gas = await votingContract.methods.getVoting().estimateGas();
+      const res = await votingContract.methods.getVoting().call();
 
       // console.log(res);
       setVotes(res);
